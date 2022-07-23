@@ -1,5 +1,7 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
+import Header from '../components/Header';
 import Loading from '../components/Loading';
 
 export default class Login extends React.Component {
@@ -9,6 +11,7 @@ export default class Login extends React.Component {
       inputUser: '',
       isButtonDisabled: true,
       loading: false,
+      logued: false,
     };
   }
 
@@ -28,16 +31,18 @@ export default class Login extends React.Component {
       const { inputUser } = this.state;
       await createUser({ name: inputUser });
       if (this.isMount) {
-        this.setState({ loading: false });
+        this.setState({ loading: false, logued: true });
       }
     });
   };
 
   render() {
-    const { inputUser, isButtonDisabled, loading } = this.state;
+    const { inputUser, isButtonDisabled, loading, logued } = this.state;
     return (
       <div data-testid="page-login">
+        {logued && <Redirect to="/search" />}
         {loading && <Loading />}
+        <Header />
         <form>
           <input
             type="text"
