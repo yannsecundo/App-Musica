@@ -21,7 +21,7 @@ export default class Header extends Component {
   render() {
     const { user, loading } = this.state;
     return (
-      <Header
+      <div
         data-testid="header-component"
       >
         {loading ? (
@@ -32,7 +32,7 @@ export default class Header extends Component {
         <Link data-testid="link-to-search" to="/Search">pesquisar</Link>
         <Link data-testid="link-to-favorites" to="/Favorites">favoritos</Link>
         <Link data-testid="link-to-profile" to="/Profile">perfil</Link>
-      </Header>
+      </div>
     );
   }
 }

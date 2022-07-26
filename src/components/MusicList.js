@@ -23,5 +23,5 @@ export default class MusicList extends Component {
 }
 
 MusicList.propTypes = {
-  searchResults: PropTypes.arrayOf(PropTypes.object).isRequired,
+  searchResults: PropTypes.InstanceOf(PropTypes.arrayOf(PropTypes.object)).isRequired,
 };

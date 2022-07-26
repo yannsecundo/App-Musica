@@ -60,5 +60,4 @@ MusicCard.propTypes = {
   trackName: PropTypes.string.isRequired,
   trackId: PropTypes.number.isRequired,
   updateFavoriteSongs: PropTypes.func.isRequired,
-  favoriteSongs: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
+  favoriteSongs: PropTypes.InstanceOf(PropTypes.arrayOf(PropTypes.object)).isRequired };
