@@ -36,7 +36,7 @@ export default class Profile extends Component {
             <img data-testid="profile-image" src={ user.image } alt={ user.name } />
             <div>{user.description}</div>
 
-            <Link to="/Profile/Edit">Editar perfil</Link>
+            <Link to="/profile/edit">Editar perfil</Link>
 
           </div>
         )}

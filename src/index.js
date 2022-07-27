@@ -5,8 +5,6 @@ import App from './App';
 import {BrowserRouter, Switch} from 'react-router-dom';
 
 ReactDOM.render(
-  <BrowserRouter>
-      <App />
-  </BrowserRouter>,
+      <App />,      
   document.getElementById('root'),
 );

@@ -18,7 +18,7 @@ export default class Search extends Component {
 
   buttonCondition = () => {
     const { inputSearch } = this.state;
-    const inputMinLength = 3;
+    const inputMinLength = 2;
     this.setState({ isButtonDisabled: inputSearch.length < inputMinLength });
   };
 

@@ -15,6 +15,14 @@ export default class Login extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.isMount = true;
+  }
+
+  componentWillUnmount() {
+    this.isMount = false;
+  }
+
   buttonCondition = () => {
     const { inputUser } = this.state;
     const inputMinLength = 3;
@@ -40,9 +48,9 @@ export default class Login extends React.Component {
     const { inputUser, isButtonDisabled, loading, logued } = this.state;
     return (
       <div data-testid="page-login">
+        <Header />
         {logued && <Redirect to="/search" />}
         {loading && <Loading />}
-        <Header />
         <form>
           <input
             type="text"

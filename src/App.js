@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import Album from './pages/Album';
 import Login from './pages/Login';
 import Search from './pages/search';
@@ -13,15 +13,17 @@ class App extends React.Component {
     return (
       <div>
         <h1>Home Page</h1>
-        <Switch>
-          <Route exact path="/" component={ Login } />
-          <Route path="/search" component={ Search } />
-          <Route path="/album/:id" component={ Album } />
-          <Route path="/favorites" component={ Favorites } />
-          <Route exact path="/profile" component={ Profile } />
-          <Route path="/profile/edit" component={ ProfileEdit } />
-          <Route component={ NotFound } />
-        </Switch>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={ Login } />
+            <Route path="/search" component={ Search } />
+            <Route path="/album/:id" component={ Album } />
+            <Route path="/favorites" component={ Favorites } />
+            <Route exact path="/profile" component={ Profile } />
+            <Route path="/profile/edit" component={ ProfileEdit } />
+            <Route component={ NotFound } />
+          </Switch>
+        </BrowserRouter>
       </div>
     );
   }
